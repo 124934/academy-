@@ -1,0 +1,6 @@
+{
+  "name": "Quran Education Academy",
+  "description": "Online Quran Education Academy providing 1-on-1 personalized Quran learning, Tajweed, Noorani Qaida, and Islamic studies with certified male and female tutors worldwide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
