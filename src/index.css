@@ -7,12 +7,22 @@
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: var(--font-sans);
     color: #1e293b;
     background-color: #f8fafc;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Global smooth interactive transitions on all clickable and interactive elements */
+  a, button, input, select, textarea {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -42,4 +52,65 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* 
+  Page Push Transitions (Push Forward & Push Backward)
+  Smooth cinematic push effect when switching tabs / pages
+*/
+@keyframes pushSlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes pushSlideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.push-transition-forward {
+  animation: pushSlideFromRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+.push-transition-backward {
+  animation: pushSlideFromLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+/* Staggered entrance animations for cards and lists */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover lift transition on cards across website */
+.card-hover-effect {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.08), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
 }
