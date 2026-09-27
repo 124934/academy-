@@ -1,21 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quran Education Academy - Learn Holy Quran Online with Certified Tutors</title>
-    <meta name="description" content="Online Quran Education Academy providing 1-on-1 personalized Quran learning, Tajweed, Noorani Qaida, and Islamic studies with certified male and female tutors worldwide." />
-    <meta property="og:title" content="Quran Education Academy - Learn Holy Quran Online" />
-    <meta property="og:description" content="Online Quran Education Academy providing 1-on-1 personalized Quran learning, Tajweed, Noorani Qaida, and Islamic studies with certified male and female tutors worldwide." />
+    <title>Quran Education Academy | Learn Quran Online with Certified Scholars</title>
+    <meta name="description" content="International Quran & Islamic Education Academy. Learn Quran Reading, Noorani Qaida, Tajweed, Memorization, Tafseer, and Islamic Studies with qualified male and female tutors." />
+    <meta property="og:title" content="Quran Education Academy | International Islamic Online Academy" />
+    <meta property="og:description" content="Learn the Quran. Understand Its Message. Live Its Guidance. 1-on-1 online classes with certified scholars." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/quran-academy-logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/academy-app.css">
+    <style>
+      /* User's uploaded Islamic geometric background preservation */
+      body {
+        background-color: #faf8f5 !important;
+        background-image: url("/images/islamic_bg.jpg") !important;
+        background-repeat: repeat !important;
+        background-size: 360px auto !important;
+        background-position: center top !important;
+        min-height: 100vh;
+      }
+      #root {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+      }
+      /* Clean subtle scrim so background pattern remains visible while text is 100% legible */
+      #root::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.22);
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
   </head>
-  <body>
+  <body class="text-slate-800 antialiased font-sans selection:bg-[#0A3826] selection:text-white min-h-screen">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/assets/academy-app.js"></script>
   </body>
 </html>
-
